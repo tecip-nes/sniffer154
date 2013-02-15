@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C) 2012,2013 Scuola Superiore Sant'Anna (http://www.sssup.it) 
+  and Consorzio Nazionale Interuniversitario per le Telecomunicazioni 
+  (http://www.cnit.it).
+  
+  This file is part of Sniffer 15.4, an IEEE 802.15.4 packet sniffer for 
+  Android devices.
+  
+  Sniffer 15.4 is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+   
+  Sniffer 15.4 is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+   
+  You should have received a copy of the GNU General Public License
+  along with Sniffer 15.4.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <CheckBoxPreference
+        android:key="@string/prefsFilterEnableKey"
+        android:summary="@string/prefsFilterEnableSummary"
+        android:title="@string/prefsFilterEnableTitle" />
+    <!--
+    FIXME: MultiSelectListPreference is not supported in API < 11 (pre-HoneyComb).
+    To support API 10 we can use the solution described in http://blog.350nice.com/wp/archives/240
+    -->
+    <PreferenceScreen
+        android:dependency="@string/prefsFilterEnableKey"
+        android:key="@string/prefsFilterTypeKey"
+        android:summary="@string/prefsFilterTypeSummary"
+        android:title="@string/prefsFilterTypeTitle" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="@string/prefsFilterTypeAckKey"
+            android:title="@string/prefsFilterTypeAckTitle" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="@string/prefsFilterTypeBeaconKey"
+            android:title="@string/prefsFilterTypeBeaconTitle" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="@string/prefsFilterTypeCommandKey"
+            android:title="@string/prefsFilterTypeCommandTitle" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="@string/prefsFilterTypeDataKey"
+            android:title="@string/prefsFilterTypeDataTitle" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="@string/prefsFilterTypeUnknownKey"
+            android:title="@string/prefsFilterTypeUnknownTitle" />
+    </PreferenceScreen>
+
+    <!--
+    Unfortunately MultiSelectListPreference is not available for 
+    	 API level < 11 :(
+    <MultiSelectListPreference
+        android:dependency="@string/prefsFilterEnableKey"
+        android:entries="@array/packetTypes"
+        android:entryValues="@array/packetTypeValues"
+        android:key="@string/prefsFilterTypeKey"
+        android:summary="@string/prefsFilterTypeSummary"
+        android:title="@string/prefsFilterTypeTitle" />
+    -->
+    <!-- Replace EditTextPreference with it.sssup.rtn.sniffer154.prefs.EditHexTextPreference -->
+    <it.sssup.rtn.sniffer154.prefs.EditHexTextPreference
+        android:dependency="@string/prefsFilterEnableKey"
+        android:dialogMessage="@string/prefsFilterSrcDialogMessage"
+        android:inputType="textCapCharacters|textNoSuggestions"
+        android:key="@string/prefsFilterSrcKey"
+        android:summary="@string/prefsFilterSrcSummary"
+        android:title="@string/prefsFilterSrcTitle" />
+    <it.sssup.rtn.sniffer154.prefs.EditHexTextPreference
+        android:dependency="@string/prefsFilterEnableKey"
+        android:dialogMessage="@string/prefsFilterDstDialogMessage"
+        android:inputType="textCapCharacters|textNoSuggestions"
+        android:key="@string/prefsFilterDstKey"
+        android:summary="@string/prefsFilterDstSummary"
+        android:title="@string/prefsFilterDstTitle" />
+    <it.sssup.rtn.sniffer154.prefs.EditHexTextPreference
+        android:dependency="@string/prefsFilterEnableKey"
+        android:dialogMessage="@string/prefsFilterRawDialogMessage"
+        android:inputType="textCapCharacters|textNoSuggestions"
+        android:key="@string/prefsFilterRawKey"
+        android:summary="@string/prefsFilterRawSummary"
+        android:title="@string/prefsFilterRawTitle" />
+
+</PreferenceScreen>

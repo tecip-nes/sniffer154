@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C) 2012,2013 Scuola Superiore Sant'Anna (http://www.sssup.it) 
+  and Consorzio Nazionale Interuniversitario per le Telecomunicazioni 
+  (http://www.cnit.it).
+  
+  This file is part of Sniffer 15.4, an IEEE 802.15.4 packet sniffer for 
+  Android devices.
+  
+  Sniffer 15.4 is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+   
+  Sniffer 15.4 is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+   
+  You should have received a copy of the GNU General Public License
+  along with Sniffer 15.4.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<resources>
+
+    <string name="app_name">Sniffer 15.4</string>
+    <string name="autoscroll">Autoscroll</string>
+    <string name="titleTestModeEnable">Enable Test Mode</string>
+    <string name="titleTestModeDisable">Disable Test Mode</string>
+
+    <string name="prefsFilterTypeAckKey">ACK</string>
+    <string name="prefsFilterTypeAckTitle">Ack</string>
+    <string name="prefsFilterTypeBeaconKey">BCN</string>
+    <string name="prefsFilterTypeBeaconTitle">Beacon</string>
+    <string name="prefsFilterTypeCommandKey">CMD</string>
+    <string name="prefsFilterTypeCommandTitle">Command</string>
+    <string name="prefsFilterTypeDataKey">DATA</string>
+    <string name="prefsFilterTypeDataTitle">Data</string>
+    <string name="prefsFilterTypeUnknownKey">UNKOWN</string>
+    <string name="prefsFilterTypeUnknownTitle">Unknown</string>
+    
+    <string name="prefsFilterEnableKey">enableFiltering</string>
+    <string name="prefsFilterEnableTitle">Enable Filtering</string>
+    <string name="prefsFilterEnableSummary">Display only packets verifying filtering conditions</string>
+    <string name="prefsFilterTypeKey">type</string>
+    <string name="prefsFilterTypeTitle">Type</string>
+    <string name="prefsFilterTypeSummary">Filter by packet type</string>
+    <string name="prefsFilterSrcKey">src</string>
+    <string name="prefsFilterSrcTitle">Source Address</string>
+    <string name="prefsFilterSrcSummary">Filter by source address</string>
+    <string name="prefsFilterSrcDialogMessage">Insert the source address in hex (a partial value is fine) or leave the text field blank for disabling filtering on source address</string>
+    <string name="prefsFilterDstKey">dst</string>
+    <string name="prefsFilterDstTitle">Destination Address</string>
+    <string name="prefsFilterDstSummary">Filter by destination address</string>
+    <string name="prefsFilterDstDialogMessage">Insert the destination address in hex (a partial value is fine) or leave the text field blank for disabling filtering on destination address</string>
+    <string name="prefsFilterRawKey">raw</string>
+    <string name="prefsFilterRawTitle">Raw Content</string>
+    <string name="prefsFilterRawSummary">Filter by raw packet content</string>
+    <string name="prefsFilterRawDialogMessage">Insert the content (in hex) you want to match</string>
+    <string name="textChooseSession">Choose the session you want to Load/Delete/Export:</string>
+    <string name="titleManageSessions">Manage Sessions</string>
+    <string name="itemLoad">Load</string>
+    <string name="itemDelete">Delete</string>
+    <string name="dialogDeleteMessage">Are you sure?</string>
+    <string name="dialogDeleteTitle">Confirm delete</string>
+    <string name="prefsCatSnifferSettingsTitle">Sniffer Settings</string>
+    <string name="prefsSniffingChannelKey">prefsSniffingChannelKey</string>
+    <string name="prefsForwardingEnableKey">prefsForwardingEnableKey</string>
+    <string name="prefsForwardingAddressKey">prefsForwardingAddressKey</string>
+    <string name="prefsForwardingPortKey">prefsForwardingPortKey</string>
+    <string name="expSave">Save</string>
+    <string name="expWhere">Files will be saved in SD card, in sniffer154 directory</string>
+    <string name="expDefault">leave blank to use default</string>
+    <string name="expSet">Set file name</string>
+    <string name="emptyString"/>
+    <string name="Date">Date</string>
+    <string name="sessionListId">Id</string>
+    <string name="raw">Raw</string>
+    <string name="pkTypeCTRL">CTRL</string>
+    <string name="listDialogPrev">Prev</string>
+    <string name="listDialogNext">Next</string>
+    <string name="listDialogSeq">SEQ N.</string>
+    <string name="Type">TYPE</string>  
+    <string name="listDialogTime">TIME</string>   
+    <string name="Hyphen"> - </string>    
+    <string name="ADDRESS">Address</string>   
+    <string name="Src">Src</string>     
+    <string name="Dst">Dst</string>  
+    <string name="Len">Len</string>     
+    <string name="PANID">Pan ID</string>      
+    <string name="BO">BO</string>       
+    <string name="SO">SO</string>    
+    <string name="rawLabel">Raw Data: </string>        
+
+</resources>

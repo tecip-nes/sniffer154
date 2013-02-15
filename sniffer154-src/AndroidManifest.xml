@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C) 2012,2013 Scuola Superiore Sant'Anna (http://www.sssup.it) 
+  and Consorzio Nazionale Interuniversitario per le Telecomunicazioni 
+  (http://www.cnit.it).
+  
+  This file is part of Sniffer 15.4, an IEEE 802.15.4 packet sniffer for 
+  Android devices.
+  
+  Sniffer 15.4 is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+   
+  Sniffer 15.4 is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+   
+  You should have received a copy of the GNU General Public License
+  along with Sniffer 15.4.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="it.sssup.rtn.sniffer154"
+    android:installLocation="preferExternal"
+    android:versionCode="5"
+    android:versionName="2.0.1" >
+
+    <uses-feature
+        android:name="android.hardware.usb.accessory"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.usb.host"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-sdk
+        android:minSdkVersion="12"
+        android:targetSdkVersion="16" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name="AppSniffer154"
+        android:allowBackup="true"
+        android:icon="@drawable/sniffer15"
+        android:label="@string/app_name" >
+        <activity
+            android:name=".PacketListActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!--
+             Unfortunately intent-filters for USB accessories can be "attached"
+             only to activities and not services :(
+            -->
+            <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED"
+                android:resource="@xml/accessory_filter" />
+
+            <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
+                android:resource="@xml/device_filter" />
+        </activity>
+        <activity
+            android:name="ListElementDialog"
+            android:theme="@style/Theme.CustomDialog" >
+        </activity>
+        <activity
+            android:name=".prefs.PrefActivity"
+            android:label="Pref title" >
+        </activity>
+        <activity android:name=".storage.PcapExporter" >
+        </activity>
+
+        <service android:name=".sniffing.TestSnifferService" >
+        </service>
+
+        <provider
+            android:name=".storage.PacketContentProvider"
+            android:authorities="it.retis.rtn.sniffer154.contentprovider"
+            android:exported="false" >
+        </provider>
+
+        <activity android:name=".prefs.FilterPrefActivity" >
+        </activity>
+        <activity android:name=".SessionManagerActivity" >
+        </activity>
+
+        <service android:name=".sniffing.SnifferAccessoryService" >
+        </service>
+        <service android:name=".sniffing.SnifferDeviceService" >
+        </service>
+    </application>
+
+</manifest>
